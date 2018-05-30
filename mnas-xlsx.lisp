@@ -2,12 +2,9 @@
 
 (in-package #:mnas-xlsx)
 
-
-
 (defun decode-string (str)
   (babel:octets-to-string
-   (babel:string-to-octets str
-			   :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
+   (babel:string-to-octets str :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
 
 (defun encode-string (str)
   (babel:octets-to-string
@@ -31,28 +28,11 @@
 	 (t (cdr el)))
        el)
    (if sheet
-       (xlsx:read-sheet
+       (xlsx-mnas:read-sheet
 	file
 	(etypecase sheet
 	  (string (encode-string sheet))
 	  (integer sheet)))
-       (xlsx:read-sheet file))))
+       (xlsx-mnas:read-sheet file))))
 
 (export 'read-sheet)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;(xlsx:as-matrix (read-sheet  "c:/Users/namatv/Desktop/book_02.xlsx" )
-;;;;
-
-
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(list-sheets "c:/Users/namatv/Desktop/book.xlsx")
-
-(read-sheet  "c:/Users/namatv/Desktop/book.xlsx" )
