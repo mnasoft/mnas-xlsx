@@ -6,6 +6,7 @@
   :license  "Specify license here"
   :version "0.0.2"
   :serial t
-  :depends-on (#:xlsx-mnas #:babel )
+; :depends-on (#:xlsx-mnas #:babel )
+  :depends-on (#:xlsx #:babel )  
   :components ((:file "package")
                (:file "mnas-xlsx")))

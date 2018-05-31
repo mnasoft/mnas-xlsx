@@ -28,11 +28,11 @@
 	 (t (cdr el)))
        el)
    (if sheet
-       (xlsx-mnas:read-sheet
+       (xlsx:read-sheet
 	file
 	(etypecase sheet
 	  (string (encode-string sheet))
 	  (integer sheet)))
-       (xlsx-mnas:read-sheet file))))
+       (xlsx:read-sheet file))))
 
 (export 'read-sheet)
