@@ -2,12 +2,9 @@
 
 (in-package #:mnas-xlsx)
 
-
-
 (defun decode-string (str)
   (babel:octets-to-string
-   (babel:string-to-octets str
-			   :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
+   (babel:string-to-octets str :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
 
 (defun encode-string (str)
   (babel:octets-to-string
@@ -39,6 +36,7 @@
        (xlsx:read-sheet file))))
 
 (export 'read-sheet)
+<<<<<<< HEAD
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -58,3 +56,5 @@
 ;;;;(list-sheets "c:/Users/namatv/Desktop/book.xlsx")
 
 ;;;;(read-sheet  "c:/Users/namatv/Desktop/book.xlsx" )
+=======
+>>>>>>> f9f50e7a179645089e68cc813032b408c4e65174

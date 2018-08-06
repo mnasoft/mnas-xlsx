@@ -4,8 +4,9 @@
   :description "Describe mnas-xlsx here"
   :author "Your Name <your.name@example.com>"
   :license  "Specify license here"
-  :version "0.0.1"
+  :version "0.0.2"
   :serial t
-  :depends-on (#:xlsx #:babel )
+; :depends-on (#:xlsx-mnas #:babel )
+  :depends-on (#:xlsx #:babel )  
   :components ((:file "package")
                (:file "mnas-xlsx")))
