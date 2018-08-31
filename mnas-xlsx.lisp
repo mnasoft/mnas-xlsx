@@ -36,25 +36,9 @@
        (xlsx:read-sheet file))))
 
 (export 'read-sheet)
-<<<<<<< HEAD
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(xmls:parse 
-	  (let ((rez ""))
-	    (with-open-file (stream "/msys32/home/namatv/quicklisp/book11.xml" :external-format :utf8)
-	     (do ((line (read-line stream nil)
-			(read-line stream nil)))
-		 ((null line))
-	       (setf rez (concatenate 'string rez line))))
-	   rez))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;(xlsx:as-matrix (read-sheet  "c:/Users/namatv/Desktop/book_02.xlsx" )
 
-;;;;(list-sheets "c:/Users/namatv/Desktop/book.xlsx")
 
-;;;;(read-sheet  "c:/Users/namatv/Desktop/book.xlsx" )
-=======
->>>>>>> f9f50e7a179645089e68cc813032b408c4e65174
