@@ -1,12 +1,12 @@
 ;;;; mnas-xlsx.asd
 
-(asdf:defsystem #:mnas-xlsx
+(defsystem #:mnas-xlsx
   :description "Describe mnas-xlsx here"
-  :author "Your Name <your.name@example.com>"
-  :license  "Specify license here"
+  :author "Nick Matvyeyev <mnasoft@gmail.com>"
+  :license "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 or later"  
   :version "0.0.2"
   :serial t
-; :depends-on (#:xlsx-mnas #:babel )
+;;;:depends-on (#:xlsx-mnas #:babel )
   :depends-on (#:xlsx #:babel )  
   :components ((:file "package")
                (:file "mnas-xlsx")))
