@@ -13,12 +13,11 @@
 
 
 (defun list-sheets (file)
+  "Возвращает перечень листов документа file"
   (mapcar
    #'(lambda (el)
        (list (first el) (decode-string (second el)) (decode-string (third el)) ))
    (xlsx:list-sheets file)))
-
-(export 'list-sheets)
 
 (defun read-sheet (file &optional (sheet 1))
   (mapcar
@@ -35,10 +34,7 @@
 	  (integer sheet)))
        (xlsx:read-sheet file))))
 
-(export 'read-sheet)
-
-
-
-
+(defun read-sheet-to-list (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) )
+  (lst-arr:arr-to-list (xlsx:as-matrix (read-sheet file sheet))))
 
 
