@@ -34,7 +34,7 @@
 	  (integer sheet)))
        (xlsx:read-sheet file))))
 
+;;;;(defun read-sheet-to-list (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) ) (lst-arr::arr-to-list (xlsx:as-matrix (read-sheet file sheet))))
+
 (defun read-sheet-to-list (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) )
-  (lst-arr:arr-to-list (xlsx:as-matrix (read-sheet file sheet))))
-
-
+  (lst-arr::list2d->array2d (xlsx:as-matrix (read-sheet file sheet))))
