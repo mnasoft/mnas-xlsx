@@ -4,7 +4,9 @@
 
 (defun decode-string (str)
   (babel:octets-to-string
-   (babel:string-to-octets str :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
+   (babel:string-to-octets
+    str
+    :encoding (babel-encodings:get-character-encoding :ISO-8859-1))))
 
 (defun encode-string (str)
   (babel:octets-to-string
