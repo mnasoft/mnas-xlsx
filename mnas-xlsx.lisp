@@ -1,5 +1,13 @@
 ;;;; mnas-xlsx.lisp
 
+(defpackage #:mnas-xlsx
+  (:use #:cl)
+  (:export list-sheets
+	   read-sheet
+	   read-sheet-to-list
+           read-sheet-to-matrix           
+	   ))
+
 (in-package #:mnas-xlsx)
 
 (defun decode-string (str)
@@ -36,7 +44,9 @@
 	  (integer sheet)))
        (xlsx:read-sheet file))))
 
-;;;;(defun read-sheet-to-list (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) ) (lst-arr::arr-to-list (xlsx:as-matrix (read-sheet file sheet))))
-
 (defun read-sheet-to-list (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) )
-  (lst-arr::list2d->array2d (xlsx:as-matrix (read-sheet file sheet))))
+  (lst-arr:array2d->list-list-by-row (xlsx:as-matrix (read-sheet file sheet))))
+
+(defun read-sheet-to-matrix (&key (file (mnas-file-dialog:get-open-file)) (sheet 1) )
+  (xlsx:as-matrix (read-sheet file sheet)))
+
