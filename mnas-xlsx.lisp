@@ -1,6 +1,6 @@
 ;;;; mnas-xlsx.lisp
 
-(defpackage #:mnas-xlsx
+(defpackage :mnas-xlsx
   (:use #:cl)
   (:export list-sheets
 	   read-sheet
@@ -8,7 +8,7 @@
            read-sheet-to-matrix           
 	   ))
 
-(in-package #:mnas-xlsx)
+(in-package :mnas-xlsx)
 
 (defun decode-string (str)
   (babel:octets-to-string

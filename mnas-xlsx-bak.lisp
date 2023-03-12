@@ -1,6 +1,6 @@
 ;;;; mnas-xlsx.lisp
 
-(in-package #:mnas-xlsx)
+(in-package :mnas-xlsx)
 
 (xmls:parse 
 	  (let ((rez ""))
